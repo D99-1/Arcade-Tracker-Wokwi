@@ -30,7 +30,8 @@
       "top": 44.6,
       "left": 326.4,
       "attrs": { "color": "green" }
-    }
+    },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": -187.8, "left": 278.5, "attrs": {} }
   ],
   "connections": [
     [ "matrix1:V+", "pico:VBUS", "red", [ "h399.57", "v57.6" ] ],
@@ -43,7 +44,11 @@
     [ "sevseg1:CLK", "pico:GP6", "green", [ "h153.6", "v-86.4" ] ],
     [ "sevseg1:DIO", "pico:GP7", "green", [ "h182.4", "v-86.4", "h-19.2" ] ],
     [ "pico:GP16", "btn1:2.l", "green", [ "v0", "h58.8", "v-57.6" ] ],
-    [ "btn1:1.l", "pico:GND.8", "green", [ "h-19.2", "v-86.4" ] ]
+    [ "btn1:1.l", "pico:GND.8", "black", [ "h-19.2", "v-86.4" ] ],
+    [ "rtc1:GND", "pico:GND.8", "black", [ "h-38.4", "v144" ] ],
+    [ "rtc1:5V", "pico:3V3", "red", [ "h-28.8", "v153.2" ] ],
+    [ "rtc1:SDA", "pico:GP8", "green", [ "h-67.2", "v230.1" ] ],
+    [ "rtc1:SCL", "pico:GP9", "green", [ "h-48", "v201.4" ] ]
   ],
   "dependencies": {}
 }
