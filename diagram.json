@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -60.75,
+      "left": 109.2,
+      "attrs": { "env": "micropython-20231005-v1.21.0" }
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix1",
+      "top": -124.2,
+      "left": -280.56,
+      "attrs": { "chain": "1" }
+    },
+    {
+      "type": "wokwi-tm1637-7segment",
+      "id": "sevseg1",
+      "top": 86.36,
+      "left": -261.77,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 44.6,
+      "left": 326.4,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "matrix1:V+", "pico:VBUS", "red", [ "h399.57", "v57.6" ] ],
+    [ "matrix1:GND", "pico:GND.8", "black", [ "h255.57", "v0", "h94.8" ] ],
+    [ "matrix1:DIN", "pico:GP3", "violet", [ "h48", "v9.6" ] ],
+    [ "matrix1:CS", "pico:GP5", "gold", [ "h38.4", "v9.6" ] ],
+    [ "matrix1:CLK", "pico:GP2", "green", [ "h19.2", "v48" ] ],
+    [ "sevseg1:VCC", "pico:3V3", "red", [ "h163.2", "v57.6", "h172.8", "v-9.6" ] ],
+    [ "sevseg1:GND", "pico:GND.8", "black", [ "h144", "v67.2", "h220.8", "v-9.6" ] ],
+    [ "sevseg1:CLK", "pico:GP6", "green", [ "h153.6", "v-86.4" ] ],
+    [ "sevseg1:DIO", "pico:GP7", "green", [ "h182.4", "v-86.4", "h-19.2" ] ],
+    [ "pico:GP16", "btn1:2.l", "green", [ "v0", "h58.8", "v-57.6" ] ],
+    [ "btn1:1.l", "pico:GND.8", "green", [ "h-19.2", "v-86.4" ] ]
+  ],
+  "dependencies": {}
+}
